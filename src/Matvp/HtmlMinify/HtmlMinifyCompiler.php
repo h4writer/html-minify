@@ -1,4 +1,4 @@
-<?php namespace Yocmen\HtmlMinify;
+<?php namespace Matvp\HtmlMinify;
 
 use Illuminate\View\Compilers\BladeCompiler;
 
@@ -13,9 +13,7 @@ class HtmlMinifyCompiler extends BladeCompiler
         $this->_config = $config;
 
         // Add Minify to the list of compilers
-        if ($this->_config['enabled'] === true) {
-            $this->compilers[] = 'Minify';
-        }
+        $this->compilers[] = 'Minify';
 
         // Set Blade contentTags and escapedContentTags
 		$this->setRawTags(
@@ -48,21 +46,13 @@ class HtmlMinifyCompiler extends BladeCompiler
     */
     protected function shouldMinify($value)
     {
-        if (preg_match('/minify/'), $value) {
-            return true;
+        if ($this->_config['enabled']) {
+            if (preg_match('/minify/'), $value) {
+                return true;
+            }
         }
 
         return false;
-
-        /*if (preg_match('/skipmin/', $value)
-         || preg_match('/<(pre|textarea)/', $value)
-         || preg_match('/<script[^\??>]*>[^<\/script>]/', $value)
-         || preg_match('/value=("|\')(.*)([ ]{2,})(.*)("|\')/', $value)
-        ) {
-            return false;
-        } else {
-            return true;
-        }*/
     }
 
     /**

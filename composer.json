@@ -1,17 +1,13 @@
 {
     "name": "matvp/html-minify",
-    "description": "Minifies the HTML output of Laravel 5 applications (Originally from https://github.com/fitztrev/laravel-html-minify)",
+    "description": "Minifies the HTML output of Laravel 5 applications (Fork from https://github.com/fitztrev/laravel-html-minify)",
     "keywords": ["laravel", "l5", "html", "optimization", "performance", "compress", "minify", "minifier", "blade"],
-    "homepage": "https://github.com/yocmen/html-minify",
+    "homepage": "https://github.com/matvp91/html-minify",
     "license": "MIT",
     "authors": [
         {
             "name": "Matthias Van Parijs",
             "email": "matvp91@gmail.com"
-        },
-        {
-            "name": "Yocsel Mendoza",
-            "email": "yocmen@gmail.com"
         },
         {
             "name": "Trevor Fitzgerald",
@@ -24,7 +20,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Yocmen\\HtmlMinify": "src/"
+            "Matvp\\HtmlMinify": "src/"
         }
     },
     "minimum-stability": "stable"

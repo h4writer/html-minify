@@ -1,4 +1,4 @@
-<?php namespace Yocmen\HtmlMinify;
+<?php namespace Matvp\HtmlMinify;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Engines\CompilerEngine;
@@ -14,7 +14,7 @@ class HtmlMinifyServiceProvider extends ServiceProvider {
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../../config/config.php' => config_path('htmlMinify.php'),
+            __DIR__ . '/../../config/config.php' => config_path('compress.php'),
         ]);
     }
 
@@ -31,7 +31,7 @@ class HtmlMinifyServiceProvider extends ServiceProvider {
             function () use ($app) {
                 $cachePath = storage_path().'/framework/views';
                 $compiler  = new HtmlMinifyCompiler(
-                    config('htmlMinify'),
+                    config('compress'),
                     $app['files'],
                     $cachePath
                 );
