@@ -48,7 +48,13 @@ class HtmlMinifyCompiler extends BladeCompiler
     */
     protected function shouldMinify($value)
     {
-        if (preg_match('/skipmin/', $value)
+        if (preg_match('/minify/'), $value) {
+            return true;
+        }
+
+        return false;
+
+        /*if (preg_match('/skipmin/', $value)
          || preg_match('/<(pre|textarea)/', $value)
          || preg_match('/<script[^\??>]*>[^<\/script>]/', $value)
          || preg_match('/value=("|\')(.*)([ ]{2,})(.*)("|\')/', $value)
@@ -56,7 +62,7 @@ class HtmlMinifyCompiler extends BladeCompiler
             return false;
         } else {
             return true;
-        }
+        }*/
     }
 
     /**
