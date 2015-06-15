@@ -47,7 +47,7 @@ class HtmlMinifyCompiler extends BladeCompiler
     protected function shouldMinify($value)
     {
         if ($this->_config['enabled']) {
-            if (preg_match('/minify/'), $value) {
+            if (preg_match('/minify/', $value)) {
                 return true;
             }
         }
